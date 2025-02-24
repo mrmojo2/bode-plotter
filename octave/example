@@ -1,0 +1,14 @@
+% Load the control library
+pkg load control;
+
+% Define the numerator and denominator of the transfer function
+numerator = 4 * [1, 1, 25]; % 4(s^2 + s + 25)
+denominator = [1, 100, 0, 0]; % s^3 + 100s^2
+
+% Create the transfer function
+G = tf(numerator, denominator);
+
+% Plot the Bode plot (magnitude and phase)
+bode(G);
+grid on;
+title('Bode Plot of G(s) = 4(s^2 + s + 25)/(s^3 + 100s^2)');
