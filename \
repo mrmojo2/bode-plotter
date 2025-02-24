@@ -1,0 +1,16 @@
+#include "BodePlot.h"
+#include "Graphics.h"
+
+#include <cmath>
+
+BodePlot::BodePlot(){}
+
+void BodePlot::drawSemiLog(){
+	for(int i=0; i<Graphics::window_width;i+=Graphics::window_width/4){
+		//float x = 100*log10(i);
+		Graphics::drawLine(x,0,x,Graphics::window_height,0x00000000);
+	}
+	for(int i=0; i<Graphics::window_height;i+=50){
+		Graphics::drawLine(0,i,Graphics::window_width,i,0x00000000);
+	}
+}
